@@ -3,5 +3,6 @@
 
 ## Content
 * SQL -
-  * ?
+  * SQL Project
+    * Normalize Database and Query's 
 * WidePepoHappy
