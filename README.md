@@ -5,4 +5,5 @@
 * SQL -
   * SQL Project
     * Normalize Database and Query's 
+* South African Language Identification
 * WidePepoHappy
