@@ -1,6 +1,10 @@
 # South African Language Identification
-* Tweet data
+Building a machine learning model that can predict what language a tweet is writing in.
+
+
+# Tools
 * Pandas
+* Matplotlib
 * Scikit-learn
   * Countvectorizer (BagOfWords)
   * Models
