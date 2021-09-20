@@ -1,5 +1,5 @@
 # South African Language Identification
-Building a machine learning model that can predict what language a tweet is writing in.
+Building a machine learning model that can predict which language a tweet is writing in.
 
 
 # Tools
