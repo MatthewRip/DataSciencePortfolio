@@ -2,8 +2,8 @@
 
 * Contributors
   * RickieMohale
-  * daniel-bru Daniel Bruintjies
-  * isabelomakhanya Sabelo Makhanya
+  * daniel-bru - Daniel Bruintjies
+  * isabelomakhanya - Sabelo Makhanya
   * MatthewRip
 
 
