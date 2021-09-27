@@ -6,7 +6,11 @@
 * to be continued
 
 
-
+* Library Version
+  * pandas - 1.2.4
+  * numpy - 1.19.5
+  * seaborn - 0.11.0
+  * matplotlib - 3.3.2
 
 
 
