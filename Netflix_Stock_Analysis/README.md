@@ -6,7 +6,7 @@
 * to be continued
 
 
-* Library Version
+* Library Version's
   * pandas - 1.2.4
   * numpy - 1.19.5
   * seaborn - 0.11.0
