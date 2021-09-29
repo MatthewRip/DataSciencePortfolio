@@ -6,4 +6,9 @@
   * SQL Project
     * Normalize Database and Query's 
 * South African Language Identification
-* WidePepoHappy
+
+* Recommender System
+  * Movie recommendations using collaborative filtering
+  * Streamlit app for recommender deployment
+ 
+* widepeepohappy
