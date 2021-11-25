@@ -6,14 +6,19 @@
   * SQL Project
     * Normalize Database and Query's 
 * South African Language Identification
-
+---
 * Recommender System
   * Movie recommendations using collaborative filtering
   * Streamlit app for recommender deployment
-
+---
 * Web Scraping
     * 
+---
+* Deep Learning
+  * IMDB Classifer
+    * Sentiment Snalysis
  
+ ---
 * widepeepohappy
 
 testoring
