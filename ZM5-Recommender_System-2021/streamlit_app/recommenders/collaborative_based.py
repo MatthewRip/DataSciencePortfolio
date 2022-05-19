@@ -39,6 +39,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 import random
 
 # Importing data
+
 movies_df = pd.read_csv('resources/data/movies.csv')
 ratings_df = pd.read_csv('resources/data/ratings.csv')
 ratings_df.drop(['timestamp'], axis=1, inplace=True)
