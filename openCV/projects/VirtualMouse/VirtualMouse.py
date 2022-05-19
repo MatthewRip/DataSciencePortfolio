@@ -1,8 +1,10 @@
+from enum import auto
 import cv2
 import numpy as np
 import time
 import HandTracking as ht
 import autopy
+import pyautogui
 
 # for fps
 previous_time = 0
@@ -15,7 +17,7 @@ boundary_reduction_x = 250
 boundary_reduction_y = 175
 
 # smoothening factor
-smoothen_mouse_factor = 10
+smoothen_mouse_factor = 20
 # previous location of x, y
 pre_x, pre_y = 0, 0
 # current location of x, y
@@ -70,14 +72,38 @@ while True:
 
         # index and middle fingers are up
         if fingers[1] == 1 and fingers[2] == 1:
+            # length, frame, line_info = hand_detector.findd_distance(
+            #     8, 12, frame)
+            # # print(length)
+            # # when both index and middle fingers are up then click
+            # if length < 7:
+            #     cv2.circle(
+            #         frame, (line_info[4], line_info[5]), 5, (0, 255, 0), cv2.FILLED)
+            #     autopy.mouse.click()
+
+            # convert coordinates / change ratio
+            x3 = np.interp(x1, (boundary_reduction_x, cam_width -
+                                boundary_reduction_x), (0, screen_width))
+            y3 = np.interp(y1, (boundary_reduction_y, cam_hieght -
+                                boundary_reduction_y), (0, screen_height))
+            # smooth mouse movement
+            curr_x = pre_x+(x3-pre_x)/smoothen_mouse_factor
+            curr_y = pre_y+(y3-pre_y)/smoothen_mouse_factor
+            pre_x, pre_y = curr_x, curr_y
+            
             length, frame, line_info = hand_detector.findd_distance(
                 8, 12, frame)
             # print(length)
             # when both index and middle fingers are up then click
-            if length < 7:
+            if length > 30:
+                pyautogui.click()
+            elif length < 40:
                 cv2.circle(
                     frame, (line_info[4], line_info[5]), 5, (0, 255, 0), cv2.FILLED)
-                autopy.mouse.click()
+                pyautogui.mouseDown(x=curr_x,y=curr_y,duration=1.0)
+                
+            
+                
 
     # frame rate
     current_time = time.time()
