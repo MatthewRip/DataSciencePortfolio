@@ -49,13 +49,17 @@ import seaborn as sns
 from wordcloud import WordCloud
 _lock = RendererAgg.lock
 
+STREAMLIT_PATH = "/app/datascienceportfolio/ZM5-Recommender_System-2021/streamlit_app/"
+
 # Data Loading
-title_list = load_movie_titles('resources/data/movies.csv')
+# title_list = load_movie_titles('resources/data/movies.csv')
+# for streamlit hosting
+title_list = load_movie_titles(STREAMLIT_PATH + 'resources/data/movies.csv')
 
 # Creating dataframes
-df_movies = pd.read_csv('resources/data/movies.csv')
-df_imdb = pd.read_csv('resources/data/imdb_data.csv')
-df_tags = pd.read_csv('resources/data/tags.csv')
+df_movies = pd.read_csv(STREAMLIT_PATH +'resources/data/movies.csv')
+df_imdb = pd.read_csv(STREAMLIT_PATH +'resources/data/imdb_data.csv')
+df_tags = pd.read_csv(STREAMLIT_PATH +'resources/data/tags.csv')
 
 # App declaration
 

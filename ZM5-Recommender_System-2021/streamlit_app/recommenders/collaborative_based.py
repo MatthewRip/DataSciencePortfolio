@@ -38,10 +38,14 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 import random
 
+
+STREAMLIT_PATH = "/app/datascienceportfolio/ZM5-Recommender_System-2021/streamlit_app/"
+
+
 # Importing data
 
-movies_df = pd.read_csv('resources/data/movies.csv')
-ratings_df = pd.read_csv('resources/data/ratings.csv')
+movies_df = pd.read_csv(STREAMLIT_PATH + 'resources/data/movies.csv')
+ratings_df = pd.read_csv(STREAMLIT_PATH + 'resources/data/ratings.csv')
 ratings_df.drop(['timestamp'], axis=1, inplace=True)
 ratings = pd.merge(ratings_df, movies_df[['movieId', 'title']], on='movieId')
 
