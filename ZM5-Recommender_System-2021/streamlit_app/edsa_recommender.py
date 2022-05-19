@@ -93,7 +93,7 @@ def main():
         st.image(STREAMLIT_PATH + 'resources/imgs/Image_header.png', use_column_width=True)
         # Recommender System algorithm selection
         sys = st.radio("Select an algorithm",
-                       ('Collaborative Based Filtering'))
+                       ('Collaborative Based Filtering',))
 
         # User-based preferences
         st.write('### Enter Your Three Favorite Movies')
