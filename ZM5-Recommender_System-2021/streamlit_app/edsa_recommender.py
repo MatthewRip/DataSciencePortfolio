@@ -65,7 +65,7 @@ df_tags = pd.read_csv(STREAMLIT_PATH +'resources/data/tags.csv')
 
 def main():
     # Loading Company logo
-    st.sidebar.image('resources/imgs/Company_logo-alt.png')
+    st.sidebar.image(STREAMLIT_PATH + 'resources/imgs/Company_logo-alt.png')
     # row1_space1, center_, row1_space2 = st.beta_columns((.5, 1, .2,))
     # with center_, _lock:
 
@@ -145,33 +145,33 @@ def main():
         # First row of pictures
 
         col1, col2, col3 = st.beta_columns(3)
-        Pic = Image.open('resources/imgs/Daniel_Pic.png')
+        Pic = Image.open(STREAMLIT_PATH + 'resources/imgs/Daniel_Pic.png')
         col1.image(Pic, caption="Daniel Bruintjies", width=150)
         col1.write('ML Engineer')
 
-        Pic = Image.open('resources/imgs/Sabelo_Pic.png')
+        Pic = Image.open(STREAMLIT_PATH +'resources/imgs/Sabelo_Pic.png')
         col2.image(Pic, caption="Sabelo Makhanya", width=150)
         col2.write('Data Scientist')
 
-        Pic = Image.open('resources/imgs/Matthew_Pic.png')
+        Pic = Image.open(STREAMLIT_PATH +'resources/imgs/Matthew_Pic.png')
         col3.image(Pic, caption="Matthew Rip", width=150)
         col3.write('ML Engineer')
 
         col4, col5, col6 = st.beta_columns(3)
-        Pic = Image.open('resources/imgs/Rickie_pic.png')
+        Pic = Image.open(STREAMLIT_PATH +'resources/imgs/Rickie_pic.png')
         col4.image(Pic, caption="Rickie Mogale Mohale", width=150)
         col4.write('Data Scientist')
 
-        Pic = Image.open('resources/imgs/Givenson_Pic.png')
+        Pic = Image.open(STREAMLIT_PATH +'resources/imgs/Givenson_Pic.png')
         col5.image(Pic, caption="Givenson Mwandla", width=150)
         col5.write('Data Analyst')
 
-        Pic = Image.open('resources/imgs/Akhona_Pic.png')
+        Pic = Image.open(STREAMLIT_PATH +'resources/imgs/Akhona_Pic.png')
         col6.image(Pic, caption="Akhona Njeje", width=150)
         col6.write('Data Analyst')
 
         col7, col8, col9 = st.beta_columns(3)
-        Pic = Image.open('resources/imgs/Zintle_Pic.png')
+        Pic = Image.open(STREAMLIT_PATH + 'resources/imgs/Zintle_Pic.png')
         col8.image(Pic, caption="Zintle Faltein-Maqubela", width=150)
         col8.write('Project Supervisor')
 
