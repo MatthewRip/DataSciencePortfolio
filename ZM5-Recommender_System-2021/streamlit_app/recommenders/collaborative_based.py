@@ -50,7 +50,7 @@ ratings_df.drop(['timestamp'], axis=1, inplace=True)
 ratings = pd.merge(ratings_df, movies_df[['movieId', 'title']], on='movieId')
 
 # We make use of an SVD model trained on a subset of the MovieLens 10k dataset.
-model = pickle.load(open(STREAMLIT_PATH + 'resources/models/SVD.pkl', 'rb'))
+model = pickle.load(open('/app/datascienceportfolio/ZM5-Recommender_System-2021/streamlit_app/resources/models/SVD.pkl', 'rb'))
 
 
 def prediction_item(item_id):
