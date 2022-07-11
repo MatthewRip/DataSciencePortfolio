@@ -34,9 +34,11 @@ import numpy as np
 from sklearn.metrics.pairwise import linear_kernel
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+STREAMLIT_PATH = "/app/datascienceportfolio/ZM5-Recommender_System-2021/streamlit_app/"
+
 # Importing data
-movies = pd.read_csv('resources/data/movies.csv')
-ratings = pd.read_csv('resources/data/ratings.csv')
+movies = pd.read_csv(STREAMLIT_PATH + 'resources/data/movies.csv')
+ratings = pd.read_csv(STREAMLIT_PATH + 'resources/data/ratings.csv')
 movies.dropna(inplace=True)
 
 

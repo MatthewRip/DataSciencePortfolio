@@ -36,7 +36,7 @@ from PIL import Image
 # Custom Libraries
 from utils.data_loader import load_movie_titles
 from recommenders.collaborative_based import collab_model
-from recommenders.content_based import content_model
+# from recommenders.content_based import content_model
 ##
 import base64
 
@@ -49,19 +49,23 @@ import seaborn as sns
 from wordcloud import WordCloud
 _lock = RendererAgg.lock
 
+STREAMLIT_PATH = "/app/datascienceportfolio/ZM5-Recommender_System-2021/streamlit_app/"
+
 # Data Loading
-title_list = load_movie_titles('resources/data/movies.csv')
+# title_list = load_movie_titles('resources/data/movies.csv')
+# for streamlit hosting
+title_list = load_movie_titles(STREAMLIT_PATH + 'resources/data/movies.csv')
 
 # Creating dataframes
-df_movies = pd.read_csv('resources/data/movies.csv')
-df_imdb = pd.read_csv('resources/data/imdb_data.csv')
-df_tags = pd.read_csv('resources/data/tags.csv')
+df_movies = pd.read_csv(STREAMLIT_PATH +'resources/data/movies.csv')
+df_imdb = pd.read_csv(STREAMLIT_PATH +'resources/data/imdb_data.csv')
+df_tags = pd.read_csv(STREAMLIT_PATH +'resources/data/tags.csv')
 
 # App declaration
 
 def main():
     # Loading Company logo
-    st.sidebar.image('resources/imgs/Company_logo-alt.png')
+    st.sidebar.image(STREAMLIT_PATH + 'resources/imgs/Company_logo-alt.png')
     # row1_space1, center_, row1_space2 = st.beta_columns((.5, 1, .2,))
     # with center_, _lock:
 
@@ -86,11 +90,10 @@ def main():
         # Header contents
         st.write('# Movie Recommender Engine')
         st.write('### EXPLORE Data Science Academy Unsupervised Predict')
-        st.image('resources/imgs/Image_header.png', use_column_width=True)
+        st.image(STREAMLIT_PATH + 'resources/imgs/Image_header.png', use_column_width=True)
         # Recommender System algorithm selection
         sys = st.radio("Select an algorithm",
-                       ('Content Based Filtering',
-                        'Collaborative Based Filtering'))
+                       ('Collaborative Based Filtering',))
 
         # User-based preferences
         st.write('### Enter Your Three Favorite Movies')
@@ -99,19 +102,19 @@ def main():
         movie_3 = st.selectbox('Third Option', title_list[21100:21200])
         fav_movies = [movie_1, movie_2, movie_3]
 
-        # Perform top-10 movie recommendation generation
-        if sys == 'Content Based Filtering':
-            if st.button("Recommend"):
-                try:
-                    with st.spinner('Crunching the numbers...'):
-                        top_recommendations = content_model(movie_list=fav_movies,
-                                                            top_n=10)
-                    st.title("We think you'll like:")
-                    for i, j in enumerate(top_recommendations):
-                        st.subheader(str(i + 1) + '. ' + j)
-                except:
-                    st.error("Oops! Looks like this algorithm does't work.\
-                              We'll need to fix it!")
+        # # Perform top-10 movie recommendation generation
+        # if sys == 'Content Based Filtering':
+        #     if st.button("Recommend"):
+        #         try:
+        #             with st.spinner('Crunching the numbers...'):
+        #                 top_recommendations = content_model(movie_list=fav_movies,
+        #                                                     top_n=10)
+        #             st.title("We think you'll like:")
+        #             for i, j in enumerate(top_recommendations):
+        #                 st.subheader(str(i + 1) + '. ' + j)
+        #         except:
+        #             st.error("Oops! Looks like this algorithm does't work.\
+        #                       We'll need to fix it!")
 
         if sys == 'Collaborative Based Filtering':
             if st.button("Recommend"):
@@ -141,33 +144,33 @@ def main():
         # First row of pictures
 
         col1, col2, col3 = st.beta_columns(3)
-        Pic = Image.open('resources/imgs/Daniel_Pic.png')
+        Pic = Image.open(STREAMLIT_PATH + 'resources/imgs/Daniel_Pic.png')
         col1.image(Pic, caption="Daniel Bruintjies", width=150)
         col1.write('ML Engineer')
 
-        Pic = Image.open('resources/imgs/Sabelo_Pic.png')
+        Pic = Image.open(STREAMLIT_PATH +'resources/imgs/Sabelo_Pic.png')
         col2.image(Pic, caption="Sabelo Makhanya", width=150)
         col2.write('Data Scientist')
 
-        Pic = Image.open('resources/imgs/Matthew_Pic.png')
+        Pic = Image.open(STREAMLIT_PATH +'resources/imgs/Matthew_Pic.png')
         col3.image(Pic, caption="Matthew Rip", width=150)
         col3.write('ML Engineer')
 
         col4, col5, col6 = st.beta_columns(3)
-        Pic = Image.open('resources/imgs/Rickie_pic.png')
+        Pic = Image.open(STREAMLIT_PATH +'resources/imgs/Rickie_pic.png')
         col4.image(Pic, caption="Rickie Mogale Mohale", width=150)
         col4.write('Data Scientist')
 
-        Pic = Image.open('resources/imgs/Givenson_Pic.png')
+        Pic = Image.open(STREAMLIT_PATH +'resources/imgs/Givenson_Pic.png')
         col5.image(Pic, caption="Givenson Mwandla", width=150)
         col5.write('Data Analyst')
 
-        Pic = Image.open('resources/imgs/Akhona_Pic.png')
+        Pic = Image.open(STREAMLIT_PATH +'resources/imgs/Akhona_Pic.png')
         col6.image(Pic, caption="Akhona Njeje", width=150)
         col6.write('Data Analyst')
 
         col7, col8, col9 = st.beta_columns(3)
-        Pic = Image.open('resources/imgs/Zintle_Pic.png')
+        Pic = Image.open(STREAMLIT_PATH + 'resources/imgs/Zintle_Pic.png')
         col8.image(Pic, caption="Zintle Faltein-Maqubela", width=150)
         col8.write('Project Supervisor')
 

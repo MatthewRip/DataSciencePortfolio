@@ -151,7 +151,7 @@ big_train.csv
 TO-DO.md
 
 # pickle files
-*.pkl
+# *.pkl
 
 # others
 .streamlit/
