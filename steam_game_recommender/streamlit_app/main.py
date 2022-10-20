@@ -1,6 +1,4 @@
 # required for app
-from cgi import print_arguments
-from codecs import utf_16_le_decode
 import streamlit as st
 
 #
@@ -82,21 +80,22 @@ if sys == "Game title":
                     st.write('Discount: ' + price[2])
 
                 # drop down for url and image
-                expander = st.beta_expander('Page link')
+                expander = st.expander('Page link')
                 # game page url
                 expander.write(url)
                 # st.write('test')
         except:
             st.error('Insufficient funds...')
 
-# if sys == 'Game url':
+if sys == 'Game url':
 
-#     text_input_container = st.empty()
-#     text_input_container.text_input("Enter something", key="text_input")
+    text_input_container = st.empty()
+    text_input_container.text_input("Paste url", key="text_input")
+    print(text_input_container)
 
-#     if st.session_state.text_input != "":
-#         text_input_container.empty()
-#         st.info(st.session_state.text_input)
+    if st.session_state.text_input != "":
+        text_input_container.empty()
+        st.info(st.session_state.text_input)
 
 
 
