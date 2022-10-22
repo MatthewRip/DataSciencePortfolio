@@ -9,8 +9,10 @@ import pandas as pd
 
 
 # import data
-DATA_PATH = 'resources/data/'
-df = pd.read_csv(DATA_PATH + 'data.csv')
+# you have add this steamlit path or it would be able to find the files
+# path all the way from the base
+STREAMLIT_PATH = "/app/datascienceportfolio/steam_game_recommender/streamlit_app/"
+df = pd.read_csv(STREAMLIT_PATH + 'resources/data/data.csv')
 df.dropna(inplace=True)
 
 # 

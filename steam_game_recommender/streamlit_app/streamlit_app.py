@@ -21,12 +21,14 @@ from recommender import tokenizer
 # class for getting information from steam
 fetch_data = FetchFromWeb()
 
-#
-DATA_PATH = ""
-game_data = pd.read_csv("resources/data/data.csv")
+# import data
+# you have add this steamlit path or it would be able to find the files
+# path all the way from the base
+STREAMLIT_PATH = "/app/datascienceportfolio/steam_game_recommender/streamlit_app/"
+game_data = pd.read_csv(STREAMLIT_PATH + 'resources/data/data.csv')
 game_data.dropna(inplace=True)
-two_dim = pd.read_csv('resources/data/2d.csv')
-three_dim = pd.read_csv('resources/data/3d.csv')
+two_dim = pd.read_csv(STREAMLIT_PATH + 'resources/data/2d.csv')
+three_dim = pd.read_csv(STREAMLIT_PATH + 'resources/data/3d.csv')
 game_titles = game_data['title']
 
 
