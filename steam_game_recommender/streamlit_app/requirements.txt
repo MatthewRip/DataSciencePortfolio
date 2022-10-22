@@ -1,5 +1,5 @@
 scikit-learn
-poltly
+plotly
 pandas
 BeautifulSoup
 requests
