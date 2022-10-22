@@ -1,0 +1,6 @@
+scikit-learn
+poltly
+pandas
+BeautifulSoup
+requests
+pickle
