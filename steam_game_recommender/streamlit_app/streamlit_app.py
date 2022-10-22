@@ -22,7 +22,8 @@ from recommender import tokenizer
 fetch_data = FetchFromWeb()
 
 #
-game_data = pd.read_csv('resources/data/data.csv')
+DATA_PATH = ""
+game_data = pd.read_csv("resources/data/data.csv")
 game_data.dropna(inplace=True)
 two_dim = pd.read_csv('resources/data/2d.csv')
 three_dim = pd.read_csv('resources/data/3d.csv')
