@@ -3,4 +3,3 @@ plotly
 pandas
 beautifulsoup4
 requests
-pickle
