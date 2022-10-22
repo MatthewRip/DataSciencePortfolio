@@ -27,6 +27,7 @@ fetch_data = FetchFromWeb()
 STREAMLIT_PATH = "/app/datascienceportfolio/steam_game_recommender/streamlit_app/"
 game_data = pd.read_csv(STREAMLIT_PATH + 'resources/data/data.csv')
 game_data.dropna(inplace=True)
+# plots data
 two_dim = pd.read_csv(STREAMLIT_PATH + 'resources/data/2d.csv')
 three_dim = pd.read_csv(STREAMLIT_PATH + 'resources/data/3d.csv')
 game_titles = game_data['title']
@@ -48,7 +49,7 @@ def main():
     with st.sidebar:
         # get recommendations or display data
         sidebar_selection = st.radio(
-            'Select', ('Get recommendation', 'Visualize data', 'Info'))
+            'Select', ('Get recommendation', 'Visualize data', 'About'))
 
         if sidebar_selection == 'Get recommendation':
             # with st.expander('Display type:'):
@@ -148,6 +149,11 @@ def main():
             text_input_container = st.empty()
             user_added_url = text_input_container.text_input("Paste url...")
 
+            st.caption('This only works with links from steam store.')
+            example_expander = st.expander('Example:')
+            example_expander.caption('https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/')
+
+            
             if user_added_url != "":
                 # text_input_container.empty()
                 st.info(user_added_url)
@@ -289,7 +295,7 @@ def main():
 
                 # Plot!
                 st.plotly_chart(fig, use_container_width=True)
-    if sidebar_selection == 'Info':
+    if sidebar_selection == 'About':
 
         st.write('Hello there, a bit on how this app works.')
         """
