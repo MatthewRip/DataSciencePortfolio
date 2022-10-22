@@ -9,14 +9,10 @@ import pandas as pd
 
 
 # import data
-df = pd.read_csv('resources/data/data.csv')
+df = pd.read_csv('resources\data\data.csv')
 df.dropna(inplace=True)
 
-
-# load kmeans model
-# model = pickle.load(open('model.plk', 'rb'))
-
-
+# 
 def remove_punctuation(tags):
     # list to string
     tags = ','.join([str(tag) for tag in tags])
