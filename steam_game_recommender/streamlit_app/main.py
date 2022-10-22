@@ -41,7 +41,7 @@ def main():
             </style>
             """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
+    
     # side bar information
     with st.sidebar:
         # get recommendations or display data
