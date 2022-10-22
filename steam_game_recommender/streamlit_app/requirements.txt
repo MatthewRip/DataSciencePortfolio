@@ -1,6 +1,6 @@
 scikit-learn
 plotly
 pandas
-BeautifulSoup
+beautifulsoup4
 requests
 pickle
