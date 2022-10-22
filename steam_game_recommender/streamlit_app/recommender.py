@@ -9,8 +9,8 @@ import pandas as pd
 
 
 # import data
-df = pd.read_csv('resources\data\data.csv')
-df.dropna(inplace=True)
+# df = pd.read_csv('resources/data/data.csv')
+# df.dropna(inplace=True)
 
 # 
 def remove_punctuation(tags):
