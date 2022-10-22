@@ -22,11 +22,10 @@ from recommender import tokenizer
 fetch_data = FetchFromWeb()
 
 #
-game_data = pd.read_csv('resources/data/clustered_data.csv')
+game_data = pd.read_csv('resources/data/data.csv')
 game_data.dropna(inplace=True)
 two_dim = pd.read_csv('resources/data/2d.csv')
 three_dim = pd.read_csv('resources/data/3d.csv')
-game_data = pd.read_csv('resources/data/clustered_data.csv')
 game_titles = game_data['title']
 
 
@@ -62,36 +61,6 @@ def main():
             num_recommendations = st.slider(
                 'Number of recommendations.', 10, 50, None, 10)
 
-            # padding kek
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-
-            st.caption('App info:')
-            st.caption(
-                '')
 
     if sidebar_selection == 'Get recommendation':
 
